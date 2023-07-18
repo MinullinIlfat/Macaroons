@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Macaroons</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/adaptive.css">
+    <title>macaroons</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 </head>
 <body>
@@ -42,13 +42,13 @@
             </div>
             <ul>
                 <li>
-                    <a href="#">Пироженки</a>
+                    <a href="#t1" class="cakes">Пироженки</a>
                 </li>
                 <li>
-                    <a href="#">О нас</a>
+                    <a href="#t2" class="about_Us">О нас</a>
                 </li>
                 <li>
-                    <a href="#">Оформить заказ</a>
+                    <a href="#t3" class="checkout">Оформить заказ</a>
                 </li>
             </ul>
         </nav>
@@ -69,7 +69,7 @@
                 Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
             </div>
             <div class="main-btn">
-                <button class="btn">Выбрать макарун</button>
+                <button class="btn btn-scroll">Выбрать макарун</button>
             </div>
         </div>
         <div class="main-image">
@@ -170,7 +170,7 @@
                         1,70 руб.
                     </div>
                     <div class="item-action">
-                        <button class="btn">
+                        <button class="btn btn-add-too-cart">
                             Заказать
                         </button>
                     </div>
@@ -191,7 +191,7 @@
                         1,70 руб.
                     </div>
                     <div class="item-action">
-                        <button class="btn">
+                        <button class="btn btn-add-too-cart">
                             Заказать
                         </button>
                     </div>
@@ -212,7 +212,7 @@
                         1,70 руб.
                     </div>
                     <div class="item-action">
-                        <button class="btn">
+                        <button class="btn btn-add-too-cart">
                             Заказать
                         </button>
                     </div>
@@ -233,7 +233,7 @@
                         1,70 руб.
                     </div>
                     <div class="item-action">
-                        <button class="btn">
+                        <button class="btn btn-add-too-cart">
                             Заказать
                         </button>
                     </div>
@@ -250,6 +250,9 @@
             <img src="images/macaron123.png" alt="macaron" class="order-images-fix">
         </div>
         <div class="order-form">
+            <div class="show-text">
+                Спасибо за Ваш заказ. Мы скоро свяжемся с Вами!
+            </div>
             <div class="order-title">
                 <h2>Закажите макарун!</h2>
             </div>
@@ -261,7 +264,8 @@
                     <span>Ваш выбор</span>
                 </div>
                 <div class="order-choice-input">
-                    <input type="text" placeholder="Напишите, что хотите заказать...">
+                    <input type="text" placeholder="Напишите, что хотите заказать..." id="product">
+                    <div class="input-error">Необходимо ввести заказ</div>
                 </div>
             </div>
             <div class="order-name">
@@ -269,12 +273,14 @@
                     <span>Заполните данные для заказа</span>
                 </div>
                 <div class="order-name-input">
-                    <input type="text" placeholder="Ваше имя">
-                    <input type="text" placeholder="+375 (__) ___ - __ - __">
+                    <input type="text" placeholder="Ваше имя" id="name">
+                    <div class="input-error">Необходимо ввести имя</div>
+                    <input type="text" placeholder="+375 (__) ___ - __ - __" id="phone">
+                    <div class="input-error">Необходимо ввести телефон</div>
                 </div>
             </div>
-            <div class="order-action">
-                <button class="btn">Оформить заказ</button>
+            <div class="order-action cakes">
+                <button type="button" class="btn cakes" id="submit">Оформить заказ</button>
             </div>
             <div class="form-image">
                 <img src="images/klybnika2.png" alt="Fruit">
@@ -310,18 +316,12 @@
     </div>
 </footer>
 
-<script>
-    document.getElementById('burger').onclick = function () {
-        document.getElementById('menu').classList.add('open');
-    }
+<div class="loader">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
 
-    document.querySelectorAll('#menu *').forEach((item) => {
-        item.onclick = () => {
-            document.getElementById('menu').classList.remove('open')
-        }
-    })
-</script>
-
+<script src="scripts/code.jquery.com_jquery-3.7.0.min.js"></script>
+<script src="scripts/script.js"></script>
 
 </body>
 </html>
